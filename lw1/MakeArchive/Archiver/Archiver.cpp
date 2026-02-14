@@ -1,5 +1,5 @@
-#include "Archiver.h"
-#include "Process.h"
+#include "../Archiver/Archiver.h"
+#include "../Process/Process.h"
 
 void Archiver::Archive(const std::string& archiveName, std::vector<std::string>& files)
 {

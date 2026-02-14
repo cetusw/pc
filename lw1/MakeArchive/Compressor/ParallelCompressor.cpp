@@ -1,7 +1,7 @@
 #include "ParallelCompressor.h"
 
-#include "FileUtils.h"
-#include "Process.h"
+#include "../Process/Process.h"
+#include "../Utils/FileUtils.h"
 
 #include <stdexcept>
 #include <sys/wait.h>

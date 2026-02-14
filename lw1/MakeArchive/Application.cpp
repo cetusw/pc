@@ -1,9 +1,9 @@
 #include "Application.h"
 
-#include "Archiver.h"
-#include "ICompressor.h"
-#include "ParallelCompressor.h"
-#include "SequentialCompressor.h"
+#include "Archiver/Archiver.h"
+#include "Compressor/SequentialCompressor.h"
+#include "Compressor/ICompressor.h"
+#include "Compressor/ParallelCompressor.h"
 
 #include <chrono>
 #include <iostream>

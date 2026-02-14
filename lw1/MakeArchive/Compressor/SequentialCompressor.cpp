@@ -1,6 +1,6 @@
-#include "SequentialCompressor.h"
-#include "FileUtils.h"
-#include "Process.h"
+#include "../Compressor/SequentialCompressor.h"
+#include "../Process/Process.h"
+#include "../Utils/FileUtils.h"
 
 std::vector<std::string> SequentialCompressor::Compress(const std::vector<std::string>& files)
 {
