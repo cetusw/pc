@@ -1,0 +1,2 @@
+-S ../archive.tar ../data/sample-5s.webm ../data/sample-10s.webm ../data/sample-15s.webm ../data/sample-20s.webm ../data/sample-30s.webm
+-P 10 ../archive.tar ../data/sample-5s.webm ../data/sample-10s.webm ../data/sample-15s.webm ../data/sample-20s.webm ../data/sample-30s.webm
