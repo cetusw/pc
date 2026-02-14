@@ -3,7 +3,7 @@
 
 #include "ICompressor.h"
 
-class ParallelCompressor : public ICompressor
+class ParallelCompressor final : public ICompressor
 {
 public:
 	explicit ParallelCompressor(int maxProcesses);
