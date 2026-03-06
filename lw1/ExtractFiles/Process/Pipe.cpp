@@ -10,6 +10,7 @@ Pipe::Pipe()
 	}
 }
 
+// TODO не вызывать деструктор pipe в дочерних процессах
 Pipe::~Pipe()
 {
 	CloseRead();

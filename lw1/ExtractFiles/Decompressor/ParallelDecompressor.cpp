@@ -42,7 +42,7 @@ void ParallelDecompressor::WaitForSlot()
 
 	if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
 	{
-		throw std::runtime_error("One of the compression processes failed");
+		throw std::runtime_error("One of the decompression processes failed");
 	}
 }
 

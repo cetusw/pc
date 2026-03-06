@@ -4,7 +4,6 @@
 #include "Decompressor/ParallelDecompressor.h"
 #include "Decompressor/SequentialDecompressor.h"
 #include "Extractor/Extractor.h"
-
 #include <chrono>
 #include <iostream>
 #include <memory>
