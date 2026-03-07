@@ -17,3 +17,14 @@ add_executable(life main.cpp
 )
 
 target_link_libraries(life sfml-graphics sfml-window sfml-system)
+
+find_package(benchmark REQUIRED)
+
+add_executable(life_benchmark
+        benchmarks/benchmark.cpp
+        Model/Board.cpp
+        StepSynchronizer.cpp
+        FileDescriptor.cpp
+)
+target_link_libraries(life_benchmark benchmark::benchmark Threads::Threads)
+
