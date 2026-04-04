@@ -71,21 +71,33 @@ void Application::PrintStatistics() const
 {
 	int totalProduced = 0;
 	int totalConsumed = 0;
+	int producerCount = 0;
+	int consumerCount = 0;
 
 	for (const auto& w : m_workers)
 	{
-		if (dynamic_cast<const Producer*>(w.get()))
+		if (w->GetName() == "Producer")
 		{
 			totalProduced += w->GetTotalProcessed();
+			producerCount++;
 		}
-		else if (dynamic_cast<const Client*>(w.get()))
+		else if (w->GetName() == "Consumer")
 		{
 			totalConsumed += w->GetTotalProcessed();
+			consumerCount++;
 		}
 	}
 
 	std::cout << "-----------------------------" << std::endl;
-	std::cout << "Produced: " << totalProduced << std::endl;
-	std::cout << "Consumed: " << totalConsumed << std::endl;
-	std::cout << "Left in Queue: " << m_queue.GetSize() << std::endl;
+	std::cout << "STATISTICS:" << std::endl;
+	std::cout << "Producers active: " << producerCount << std::endl;
+	std::cout << "Consumers active: " << consumerCount << std::endl;
+	std::cout << "Total Produced:   " << totalProduced << std::endl;
+	std::cout << "Total Consumed:   " << totalConsumed << std::endl;
+	std::cout << "Left in Queue:    " << m_queue.GetSize() << std::endl;
+
+	std::cout << "-----------------------------" << std::endl;
+	std::cout << "INTERNAL QUEUE STATS:" << std::endl;
+	std::cout << "Max Queue Size:   " << m_queue.GetMaxQueueSize() << " / " << m_queue.GetCapacity() << std::endl;
+	std::cout << "Total Lock Ops:   " << m_queue.GetLockCount() << std::endl;
 }

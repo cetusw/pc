@@ -9,4 +9,5 @@ public:
 	{
 	}
 	void Run(std::stop_token stopToken) override;
+	std::string GetName() const override;
 };
