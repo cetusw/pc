@@ -12,6 +12,7 @@ public:
 		OFF
 	};
 
+	SineWaveGenerator();
 	SineWaveGenerator(
 		ma_uint32 sampleRate,
 		ma_float frequency,
@@ -22,6 +23,7 @@ public:
 
 	void Release();
 	[[nodiscard]] bool IsActive() const;
+	void Reset(ma_uint32 sampleRate, ma_float frequency, ma_float amplitude = 0.3f);
 
 private:
 	void HandleReleasing();

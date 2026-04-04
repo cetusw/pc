@@ -1,7 +1,11 @@
 #pragma once
 #include "SineWaveGenerator.h"
+
+#include <array>
 #include <map>
 #include <memory>
+
+constexpr int MAX_VOICES = 16;
 
 class Piano
 {
@@ -14,6 +18,7 @@ public:
 
 private:
 	ma_uint32 m_sampleRate;
-	std::map<int, std::unique_ptr<SineWaveGenerator>> m_activeVoices;
+	std::array<SineWaveGenerator, MAX_VOICES> m_voices;
+	std::array<int, MAX_VOICES> m_voiceNoteMap;
 	std::mutex m_mutex;
 };
