@@ -24,11 +24,7 @@ int TicketOffice::SellTickets(const int ticketsToBuy)
 		const int ticketsToSell = std::min(ticketsToBuy, ticketsLeft);
 		const int newTicketsLeft = ticketsLeft - ticketsToSell;
 
-		if (m_numTickets.compare_exchange_weak(
-				ticketsLeft,
-				newTicketsLeft,
-				std::memory_order_relaxed,
-				std::memory_order_relaxed))
+		if (m_numTickets.compare_exchange_weak(ticketsLeft, newTicketsLeft))
 		{
 			return ticketsToSell;
 		}
