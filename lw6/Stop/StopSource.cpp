@@ -14,5 +14,5 @@ void StopSource::RequestStop() const
 
 StopToken StopSource::GetToken() const
 {
-	return StopToken{ m_state };
+	return StopToken(m_state);
 }
