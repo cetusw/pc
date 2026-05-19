@@ -6,8 +6,25 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 enable_testing()
 
-find_package(GTest REQUIRED)
-find_package(benchmark REQUIRED)
+include(FetchContent)
+
+FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG main
+)
+
+FetchContent_MakeAvailable(googletest)
+
+set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
+
+FetchContent_Declare(
+        benchmark
+        GIT_REPOSITORY https://github.com/google/benchmark.git
+        GIT_TAG main
+)
+
+FetchContent_MakeAvailable(benchmark)
 
 add_library(ticket_office
         lock-free/TicketOffice.cpp
