@@ -11,6 +11,7 @@ public:
 	struct promise_type;
 	using CoroHandle = std::coroutine_handle<promise_type>;
 
+	// NOLINTBEGIN(readability-convert-member-functions-to-static)
 	struct promise_type
 	{
 		std::string result;
@@ -40,8 +41,9 @@ public:
 			std::terminate();
 		}
 	};
+	// NOLINTEND(readability-convert-member-functions-to-static)
 
-	explicit MyTask(CoroHandle h)
+	explicit MyTask(const CoroHandle h)
 		: m_handle(h)
 	{
 	}
