@@ -1,8 +1,6 @@
 #pragma once
 #include "SineWaveGenerator.h"
-
 #include <array>
-#include <map>
 #include <memory>
 
 constexpr int MAX_VOICES = 16;
