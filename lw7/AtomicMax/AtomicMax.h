@@ -13,9 +13,11 @@ public:
 	void Update(T newValue) noexcept
 	{
 		T current = m_value.load(std::memory_order_relaxed);
+		// TODO memory_order_release/acquire
 
 		while (newValue > current)
 		{
+			// TODO чем отличается strong от weak
 			if (m_value.compare_exchange_weak(
 					current,
 					newValue,
