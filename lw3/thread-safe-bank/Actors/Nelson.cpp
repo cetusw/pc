@@ -1,5 +1,5 @@
 #include "Nelson.h"
-
+#include "../ActorWithBankAccount.h"
 #include <iostream>
 
 Nelson::Nelson(const Money cash)
@@ -19,7 +19,3 @@ void Nelson::Act(Actors& actors)
 		}
 	}
 }
-
-
-
-

@@ -1,6 +1,4 @@
-#ifndef APU_H
-#define APU_H
-
+#pragma once
 #include "../Actor.h"
 #include "../ActorWithBankAccount.h"
 
@@ -10,5 +8,3 @@ public:
 	explicit Apu(Money cash, AccountId accountId, Bank& bank);
 	void Act(Actors& actors) override;
 };
-
-#endif // APU_H

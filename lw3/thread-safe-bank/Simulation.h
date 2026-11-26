@@ -1,16 +1,20 @@
 #pragma once
-#include "./actors/Apu.h"
-#include "./actors/Bart.h"
-#include "./actors/Homer.h"
-#include "./actors/Liza.h"
-#include "./actors/Marge.h"
-#include "./actors/MrBurns.h"
-#include "./actors/Nelson.h"
-#include "./actors/Smithers.h"
-#include "./actors/Snake.h"
 #include "Actor.h"
-
 #include <memory>
+#include <vector>
+
+struct Actors
+{
+	std::shared_ptr<ActorWithBankAccount> homer;
+	std::shared_ptr<ActorWithBankAccount> marge;
+	std::shared_ptr<Actor> bart;
+	std::shared_ptr<Actor> liza;
+	std::shared_ptr<ActorWithBankAccount> apu;
+	std::shared_ptr<ActorWithBankAccount> mrBurns;
+	std::shared_ptr<Actor> nelson;
+	std::shared_ptr<ActorWithBankAccount> snake;
+	std::shared_ptr<ActorWithBankAccount> smithers;
+};
 
 class Simulation
 {
@@ -28,19 +32,8 @@ private:
 	void GetResult();
 
 	std::unique_ptr<Bank> m_bank;
-
-	std::unique_ptr<Homer> m_homer;
-	std::unique_ptr<Marge> m_marge;
-	std::unique_ptr<Bart> m_bart;
-	std::unique_ptr<Liza> m_liza;
-	std::unique_ptr<Apu> m_apu;
-	std::unique_ptr<MrBurns> m_mrBurns;
-	std::unique_ptr<Nelson> m_nelson;
-	std::unique_ptr<Snake> m_snake;
-	std::unique_ptr<Smithers> m_smithers;
-
 	Actors m_actors{};
-
+	std::vector<std::shared_ptr<Actor>> m_allActors;
 	Money m_initialCash;
 	Money m_finalCash;
 };

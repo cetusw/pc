@@ -1,6 +1,4 @@
-#ifndef SMITHERS_H
-#define SMITHERS_H
-
+#pragma once
 #include "../Actor.h"
 #include "../ActorWithBankAccount.h"
 
@@ -10,5 +8,3 @@ public:
 	explicit Smithers(Money cash, AccountId accountId, Bank& bank);
 	void Act(Actors& actors) override;
 };
-
-#endif // SMITHERS_H

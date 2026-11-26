@@ -1,6 +1,4 @@
-#ifndef LIZA_H
-#define LIZA_H
-
+#pragma once
 #include "../Actor.h"
 #include "../Bank.h"
 
@@ -10,5 +8,3 @@ public:
 	explicit Liza(Money cash);
 	void Act(Actors& actors) override;
 };
-
-#endif // LIZA_H

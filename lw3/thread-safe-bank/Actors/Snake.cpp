@@ -10,7 +10,7 @@ void Snake::Act(Actors& actors)
 {
 	const Money stolenAmount = GenerateRandomInt(100);
 
-	if (actors.homer->SendMoney(GetAccountId(), stolenAmount))
+	if (m_bank.TrySendMoney(actors.homer->GetAccountId(), GetAccountId(), stolenAmount))
 	{
 		std::cout << "Snake stole money from Homer's bank account\n";
 		if (SendCash(*actors.apu, stolenAmount))
@@ -19,5 +19,3 @@ void Snake::Act(Actors& actors)
 		}
 	}
 }
-
-

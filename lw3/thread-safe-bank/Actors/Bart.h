@@ -1,5 +1,4 @@
-#ifndef BART_H
-#define BART_H
+#pragma once
 #include "../Bank.h"
 #include "../Actor.h"
 
@@ -9,7 +8,3 @@ public:
 	explicit Bart(Money cash);
 	void Act(Actors& actors) override;
 };
-
-
-
-#endif //BART_H

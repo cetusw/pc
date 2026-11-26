@@ -10,19 +10,6 @@ constexpr int DEFAULT_MIN = 0;
 class Actor;
 class ActorWithBankAccount;
 
-struct Actors
-{
-	std::unique_ptr<ActorWithBankAccount> homer;
-	std::unique_ptr<ActorWithBankAccount> marge;
-	std::unique_ptr<Actor> bart;
-	std::unique_ptr<Actor> liza;
-	std::unique_ptr<ActorWithBankAccount> apu;
-	std::unique_ptr<ActorWithBankAccount> mrBurns;
-	std::unique_ptr<Actor> nelson;
-	std::unique_ptr<ActorWithBankAccount> snake;
-	std::unique_ptr<ActorWithBankAccount> smithers;
-}; // TODO: использовать shared ptr ++
-
 class Actor
 {
 public:

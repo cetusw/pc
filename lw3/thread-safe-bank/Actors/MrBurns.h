@@ -1,6 +1,4 @@
-#ifndef MRBURNS_H
-#define MRBURNS_H
-
+#pragma once
 #include "../Actor.h"
 #include "../ActorWithBankAccount.h"
 
@@ -10,6 +8,3 @@ public:
 	explicit MrBurns(Money cash, AccountId accountId, Bank& bank);
 	void Act(Actors& actors) override;
 };
-
-
-#endif //MRBURNS_H

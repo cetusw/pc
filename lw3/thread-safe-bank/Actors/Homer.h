@@ -1,6 +1,4 @@
-#ifndef HOMER_H
-#define HOMER_H
-
+#pragma once
 #include "../Actor.h"
 #include "../ActorWithBankAccount.h"
 
@@ -10,7 +8,3 @@ public:
 	explicit Homer(Money cash, AccountId accountId, Bank& bank);
 	void Act(Actors& actors) override;
 };
-
-#endif //HOMER_H
-
-
